@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>modal test page</title>
+    <style>
+      html { overflow-x: hidden; }
+      body { background: #333; font: 14px/1.48 Sans-serif; color: #eee; width: 320px; margin: 1% auto; }
+      pre { background: #ffe; color: #433; font-size: 11px; padding: 1em; border: 1px #ddc solid; border-radius: 0.5em 0 0.5em 0; }
+      a { color: #ace; }
+      h1,h2,h3 { font-family: Georgia, Serif; line-height: 1; margin: 1em 0; }
+      p, ol, ul { margin: 0 1em 1em; }
+      ol, ul { margin-left: 0; padding-left: 1em; }
+    </style>
+  </head>
+  <body>
+    <h1>modal test page</h1>
+
+    <h2>Debugging</h2>
+    <p>
+      <a href="#" onclick="surveyModal.show()">Click here to reopen popup.</a><br /><br />
+      <a href="#" onclick="surveyModal.undo()">Click here to clear the cookie.</a><br /><br />
+    </p>
+
+    <h2>Description of functionality</h2>
+    <p>The included <var>modal.js</var> file does the following:</p>
+    <ol>
+      <li>Gets random coin toss, percentage of users will see the modal.</li>
+      <li>If the cookie is string "0" or not set, the script injects the HTML for the modal into the page.</li>
+      <li>Clicking the link to take the survey or the "No, thanks" link will set a cookie to never show the popup again.</li>
+    </ol>
+
+    <h2>Installation</h2>
+    <p><a href="https://github.com/davidosomething/survey-modal/zipball/master" target="_blank">Download zip of all files</a></p>
+    <ol>
+      <li>Add the <var>modal.js</var> file to the pages you want the modal to appear on. It only has to go after jQuery's <code>&lt;script&gt;</code> tag.</li>
+    </ol>
+
+    <h2>Uninstallation</h2>
+    <p>To uninstall, just remove the <var>modal.js</var> file.</p>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="modal.js"></script>
+  </body>
+</html>
