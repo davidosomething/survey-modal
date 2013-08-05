@@ -157,8 +157,8 @@ var surveyModal = (function () {
     }
     else if (m.options.percentage) {
       m.options.percentage = parseInt(m.options.percentage, 10);
-      pool = 100 / m.options.percentage;
-      isInSampleGroup = !Math.floor(Math.random() * pool);
+                        // roll a 100 sided die,           accept numbers less than %
+      isInSampleGroup = Math.floor(Math.random() * 100) <= m.options.percentage;
     }
 
     if (isInSampleGroup) {
