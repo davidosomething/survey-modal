@@ -171,7 +171,7 @@ var surveyModal = (function () {
         console.log('Not in sample group');
       }
     }
-  }
+  };
 
   // expose methods
   return this;
