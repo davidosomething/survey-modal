@@ -45,7 +45,7 @@ var surveyModal = (function () {
    */
   this.isSurveyDone = function () {
     var cookieValue = document.cookie.match('(^|;) ?isSurveyDone=([^;]*)(;|$)');
-    return cookieValue && cookieValue[2] ? !0 : !1;
+    return (typeof cookieValue[2] !== 'undefined' && cookieValue[2] === "1") ? true : false;
   };
 
   /**
@@ -142,7 +142,7 @@ var surveyModal = (function () {
       m.options = $.extend(m.options, arguments[0]);
     }
     if (m.options.debug) { // show options
-      console.log(m.options);
+      console.log(m.options, 'cookied: ' + this.isSurveyDone());
     }
 
     // set cookie after click yes or no, so popup only appears once ever
@@ -162,7 +162,12 @@ var surveyModal = (function () {
     }
 
     if (isInSampleGroup) {
-      if (m.options.debug || (!m.isSurveyDone())) {
+      // cookied?
+      if (!m.isSurveyDone()) {
+        m.show();
+      }
+      else {
+        console.log('cookied, normally wouldn\'t show but debug mode is on');
         m.show();
       }
     }
