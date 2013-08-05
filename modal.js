@@ -166,7 +166,7 @@ var surveyModal = (function () {
       if (!m.isSurveyDone()) {
         m.show();
       }
-      else {
+      else if (m.options.debug) {
         console.log('cookied, normally wouldn\'t show but debug mode is on');
         m.show();
       }
