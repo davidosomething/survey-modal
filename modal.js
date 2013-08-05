@@ -45,7 +45,7 @@ var surveyModal = (function () {
    */
   this.isSurveyDone = function () {
     var cookieValue = document.cookie.match('(^|;) ?isSurveyDone=([^;]*)(;|$)');
-    return (typeof cookieValue !== 'undefined' && cookieValue.length >= 2 && cookieValue[2] === "1") ? true : false;
+    return (cookieValue && cookieValue.length >= 2 && cookieValue[2] === "1") ? true : false;
   };
 
   /**
